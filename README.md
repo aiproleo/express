@@ -1,2 +1,0 @@
-# jsts
-javascript typescript
