@@ -2,9 +2,9 @@
 const express = require("express")
 const app     = express()
 const cors    = require('cors')
-const morgan = require('morgan');
-const logger = require('./utils/Logger.util');
-app.use(morgan(":date[iso] :remote-addr :method :url :status :user-agent",{stream:logger.stream}))
+const { winstonLogger, morganLogger } = require('./utils/logger.utils');
+winstonLogger.info('this is winston logger')
+app.use(morganLogger);
 
 const routes  = require("./v1/routes");
 const errorHandler = require('./middlewares/error-handler');
@@ -18,6 +18,8 @@ app.use(express.static('public'))                     //static
 app.use("/", routes);                               //routes
 app.use(unknownEndpoint);                           // unknown routes 
 app.use(errorHandler);                              // other errors 
+
+
 
 // template engine
 app.set('view engine', 'hbs');  // template engine: Handlebars
