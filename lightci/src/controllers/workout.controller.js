@@ -3,7 +3,7 @@ const workoutService = require('../services/workout.services');
 
 const getAll = async(req, res) => {
   // const all = workoutService.getAll()
-  logger.log("debug", "getAll!");
+  // logger.log("debug", "getAll!");
   const allWorkouts = await workoutService.getAll();
   // console.log('Received workouts:', allWorkouts);
 

@@ -1,4 +1,5 @@
 // In src/v1/swagger.js
+
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 
@@ -6,7 +7,7 @@ const swaggerUi = require("swagger-ui-express");
 const options = {
     definition: {
         openapi: "3.0.0",
-        info: { title: "Crossfit WOD API", version: "1.0.0" },
+        info: { title: "Leo's API", version: "1.1.1" },
     },
     apis: ["./src/v1/routes/api.routes.js", "./src/models/workout.model.js"],
 };

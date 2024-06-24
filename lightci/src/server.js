@@ -9,10 +9,7 @@ app.use(morgan(":date[iso] :remote-addr :method :url :status :user-agent",{strea
 const routes  = require("./v1/routes");
 const errorHandler = require('./middlewares/error-handler');
 const unknownEndpoint = (request, response) => {response.status(404).send({ error: 'unknown endpoint' });};
-const { swaggerDocs: V1SwaggerDocs } = require("./v1/swagger");
 const path = require('path');
-
-
 
 app.use(cors())                                     //cors
 app.use(express.urlencoded({ extended: true }));    //url
@@ -33,5 +30,4 @@ mongodb.connectToDatabase();
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-    V1SwaggerDocs(app, PORT);
 });
