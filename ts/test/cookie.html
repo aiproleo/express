@@ -1,0 +1,27 @@
+<body>
+    <button id="btn">获取token</button>
+    <button id="test-btn">测试自动携带Cookie</button>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", fetchData);
+  
+      const testBtn = document.getElementById("test-btn");
+      testBtn.addEventListener("click", getInfo);
+  
+      function fetchData() {
+        fetch("http://localhost:3001/token", {
+          method: "post", credentials: 'include'
+        }).then((res) => {
+          res.json().then((data) => {
+            console.log(data);
+          });
+        });
+      }
+  
+      function getInfo() {
+        fetch("http://localhost:8088/getInfo").then((res) => {
+          console.log(res);
+        });
+      }
+    </script>
+  </body>
