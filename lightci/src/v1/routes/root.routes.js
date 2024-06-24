@@ -8,7 +8,7 @@ const express = require('express');
 const router = express.Router();
 // const userController = require("../controllers/user.controller");
 
-router.route('/').get((request, response) => { response.send('<h1>Hello root.routes!</h1>') })
+router.route('/').get((request, response) => { response.send('<h5>this is: root.routes</h5>') })
 router.route('/hbs').get((request, response) => { response.render('index');});
 // router.get('/hbs', (req, res) => {res.render('index');});
 

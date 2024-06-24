@@ -1,9 +1,6 @@
 // logger.utils.js
 const { createLogger, format, transports } = require("winston");
-const { combine, timestamp, label, printf } = format;
 const morgan = require('morgan');
-const fs = require('fs');
-const path = require('path');
 
 const myFormat = printf(({ level, message, label, timestamp }) => {
     return `${timestamp} ${label} [${level}]: ${message}`; // LOG FORMAT
